@@ -1,38 +1,70 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#outlined-basic {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.admin-interface {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-input {
+  margin-bottom: 20px;
+  width: 300px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.delete-button {
+  margin-top: 20px;
+}
+
+/* Styles for smaller screens (max-width: 640px) */
+@media (max-width: 640px) {
+  .user-table-cell {
+    font-size: 12px;
+    white-space: nowrap;
+    /* Prevent text wrapping in cells */
+    overflow: hidden;
+    /* Hide overflowed content */
+    text-overflow: ellipsis;
+    /* Show ellipsis (...) for overflowed content */
   }
-  to {
-    transform: rotate(360deg);
+
+  .user-table-cell.name-cell {
+    width: 40%;
   }
+
+  .user-table-cell.email-cell,
+  .user-table-cell.role-cell,
+  .user-table-cell.checkbox-cell,
+  .user-table-cell.actions-cell {
+    width: 20%;
+    display: table-cell;
+  }
+
+  .user-table-cell.actions-cell {
+    text-align: center;
+  }
+
+  .user-table-cell.actions-cell button {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .user-table-cell.actions-cell button:first-child {
+    margin-left: 0;
+  }
+
+  .user-table-cell.actions-cell button:last-child {
+    margin-right: 0;
+  }
+}
+
+.user-table {
+  width: 100%;
 }
